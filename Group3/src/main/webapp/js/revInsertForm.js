@@ -1,3 +1,12 @@
+$(function(){
+	//input을 datepicker로 설정
+	$("#datepicker").datepicker({minDate: 0, changeYear: true, changeMonth: true});
+});
+
+$.datepicker.setDefaults({
+    dateFormat: 'yy-mm-dd' //Input Display Format 변경
+});
+
 function save(){
 		//alert("hi");
 		let frm = document.frm;

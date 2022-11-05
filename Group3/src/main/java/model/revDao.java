@@ -3,6 +3,7 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class revDao {
@@ -49,7 +50,42 @@ public class revDao {
 		
 	}
 	
+	public revDto select(String key) {
+		
+		dbCon();
+		String sql = " select * from rev where rev_num = ? ";
+		revDto dto = null;
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, key);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next()) {
+				dto = new revDto(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dto;
+	}
 	
+	public void delete(revDto dto) {
+		
+		dbCon();
+		String sql = " delete from rev where rev_num = ? ";
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, dto.getRev_num());
+			pst.executeUpdate();
+			
+			pst.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	
 	

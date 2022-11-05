@@ -12,11 +12,11 @@ import model.revDao;
 import model.revDto;
 import model.revService;
 
-@WebServlet("/revController.do")
-public class revController extends HttpServlet{
+@WebServlet("/revInsertController.do")
+public class revInsertController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/revForm.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/revInsertForm.jsp").forward(request, response);
 	}
 	
 	@Override

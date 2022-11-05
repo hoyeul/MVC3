@@ -15,4 +15,8 @@ public class revService {
 		dao.insert(dto);
 	}
 	
+	public void delete(revDto dto) {
+		dao.delete(dto);
+	}
+	
 }
