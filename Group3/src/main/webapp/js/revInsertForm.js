@@ -1,10 +1,15 @@
 $(function(){
 	//input을 datepicker로 설정
-	$("#datepicker").datepicker({minDate: 0, changeYear: true, changeMonth: true});
-});
-
-$.datepicker.setDefaults({
-    dateFormat: 'yy-mm-dd' //Input Display Format 변경
+	$("#datepicker").datepicker({
+		minDate: 1,
+		changeYear: true,
+		changeMonth: true,
+		dateFormat: 'yy-mm-dd',
+		beforeShowDay: function(date){
+			let day = date.getDay();
+			return [(day != 0 && day != 6)];
+			}
+		});
 });
 
 function save(){
