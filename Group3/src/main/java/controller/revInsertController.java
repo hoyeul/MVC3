@@ -27,14 +27,14 @@ public class revInsertController extends HttpServlet{
 		
 		String rev_num = request.getParameter("rev_num");
 		String rev_name = request.getParameter("rev_name");
+		String rev_location = request.getParameter("rev_location");
 		String rev_date = request.getParameter("rev_date");
 		String rev_time = request.getParameter("rev_time");
-		String rev_location = request.getParameter("rev_location");
 		String rev_program = request.getParameter("rev_program");
 		
 		revDao dao = new revDao();
 		revService s = new revService(dao);
-		revDto dto = new revDto(rev_num, rev_name, rev_date, rev_time, rev_location, rev_program);
+		revDto dto = new revDto(rev_num, rev_name, rev_location, rev_date, rev_time, rev_program);
 		s.insert(dto);
 		
 		response.sendRedirect("index.html");

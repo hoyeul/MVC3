@@ -11,14 +11,14 @@ public class revDto {
 	
 	public revDto() {}
 
-	public revDto(String rev_num, String rev_name, String rev_date, String rev_time, String rev_location,
+	public revDto(String rev_num, String rev_name, String rev_location, String rev_date, String rev_time, 
 			String rev_program) {
 		super();
 		this.rev_num = rev_num;
 		this.rev_name = rev_name;
+		this.rev_location = rev_location;
 		this.rev_date = rev_date;
 		this.rev_time = rev_time;
-		this.rev_location = rev_location;
 		this.rev_program = rev_program;
 	}
 
@@ -66,18 +66,9 @@ public class revDto {
 		return rev_location;
 	}
 
-	public void setRev_loation(String rev_location) {
+	public void setRev_location(String rev_location) {
 		this.rev_location = rev_location;
 	}
 
-	@Override
-	public String toString() {
-		return "revDto [rev_num=" + rev_num + ", rev_name=" + rev_name + ", rev_date=" + rev_date + ", rev_time="
-				+ rev_time + ", rev_program=" + rev_program + ", rev_location=" + rev_location + "]";
-	}
-	
-	
-	
-	
 	
 }

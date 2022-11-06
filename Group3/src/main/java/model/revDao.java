@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class revDao {
 
@@ -35,9 +37,9 @@ public class revDao {
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1, dto.getRev_num());
 			pst.setString(2, dto.getRev_name());
-			pst.setString(3, dto.getRev_date());
-			pst.setString(4, dto.getRev_time());
-			pst.setString(5, dto.getRev_location());
+			pst.setString(3, dto.getRev_location());
+			pst.setString(4, dto.getRev_date());
+			pst.setString(5, dto.getRev_time());
 			pst.setString(6, dto.getRev_program());
 			pst.executeUpdate();
 			
@@ -87,6 +89,27 @@ public class revDao {
 		}
 	}
 	
-	
-	
+	public ArrayList<revDto> selectRev_time(revDto dto){
+		dbCon();
+		ArrayList<revDto> list = new ArrayList<>();
+		
+		String sql = " select rev_time from rev where rev_location = ? and rev_date = ? ";
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, dto.getRev_location());
+			pst.setString(2, dto.getRev_date());
+			ResultSet rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				dto = new revDto();
+				dto.setRev_time(rs.getString(1));
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 }

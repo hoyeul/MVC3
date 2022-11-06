@@ -8,8 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.revDao;
+import model.revDto;
+import model.revService;
+
 @WebServlet("/revSelectController.do")
 public class revSelectController extends HttpServlet{
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/views/revSelectForm.jsp").forward(request, response);
@@ -20,7 +25,12 @@ public class revSelectController extends HttpServlet{
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/plain;utf-8");
 		
-		String key = request.getParameter("key");
-
+		String rev_num = request.getParameter("rev_num");
+		
+		revDao dao = new revDao();
+		revService s = new revService(dao);
+		s.select(rev_num);
+		
+		response.sendRedirect("print.html");
 	}
 }

@@ -16,10 +16,9 @@
 
 	int num = 0;
 	if(rs.next()){
-		num = Integer.parseInt(rs.getString(1));
+		num = Integer.parseInt(rs.getString(1))+1;
 	}
-
-
+	
 %>
 
 <!DOCTYPE html>
@@ -27,7 +26,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -36,21 +34,8 @@
 <link rel="stylesheet" href="<%=path %>/css/revInsertForm.css">
 <script src="<%=path %>/js/revInsertForm.js"></script>
 <script>
-	function change(){
-	//alert("hi");
-	if($("input:radio[id=hong]").is(":checked")){
-		$("#hong1").show();
-		$("#hong2").show();
-		$("#gang1").hide();
-		$("#gang2").hide();
-	}
-	else if($("input:radio[id=gang]").is(":checked")){
-		$("#hong1").hide();
-		$("#hong2").hide();
-		$("#gang1").show();
-		$("#gang2").show();
-	}
-}
+	
+	
 </script>
 </head>
 <body>
@@ -60,13 +45,21 @@
 <caption>건강검진 예약</caption>
 <tr>
 	<td>예약번호</td>
-	<td><input type="text" name="rev_num" value="<%=num + 1%>" readonly></td>
+	<td><input type="text" name="rev_num" value="<%=num %>" readonly></td>
 	<!-- 예약번호 자동 생성(해결) -->
 </tr>
 <tr>
 	<td>이름</td>
 	<td><input type="text" name="rev_name"></td>
-	<!-- regex -->
+	<!-- 로그인한 사람 이름 연결받아서 박아두기 -->
+</tr>
+<tr>
+	<td>지역</td>
+	<td>
+		<input type="radio" id="hong" name="rev_location" value="홍대점" onchange="change()" checked> 홍대점
+		<input type="radio" id="gang" name="rev_location" value="강남점" onchange="change()"> 강남점
+	</td>
+	<!-- js로 onchange일 때 다르게 나오게(해결) -->
 </tr>
 <tr>
 	<td>날짜</td>
@@ -76,7 +69,7 @@
 <tr>
 	<td>시간</td>
 	<td>
-		<select name="rev_time">
+		<select name="rev_time" id="rev_time" disabled>
 			<option value="">선택</option>
 			<option value="09:00">09:00</option>
 			<option value="10:00">10:00</option>
@@ -86,25 +79,17 @@
 			<option value="14:00">14:00</option>
 			<option value="15:00">15:00</option>
 			<option value="16:00">16:00</option>
-			<!-- js onready -->
+			<!-- 이미 예약된 시간 안보이게 하기 -->
 		</select>
 	</td>
-</tr>
-<tr>
-	<td>지역</td>
-	<td>
-		<input type="radio" id="hong" name="rev_location" value="홍대점" onchange="change()"> 홍대점
-		<input type="radio" id="gang" name="rev_location" value="강남점" onchange="change()"> 강남점
-	</td>
-	<!-- js로 onchange일 때 다르게 나오게(해결) -->
 </tr>
 <tr>
 	<td>건강검진 프로그램</td>
 	<td>
 		<select name="rev_program">
 			<option value="">선택</option>
-			<option value="선택1" id="hong1" hidden>선택1</option>
-			<option value="선택2" id="hong2" hidden>선택2</option>
+			<option value="선택1" id="hong1">선택1</option>
+			<option value="선택2" id="hong2">선택2</option>
 			<option value="선택3" id="gang1" hidden>선택3</option>
 			<option value="선택4" id="gang2" hidden>선택4</option>
 		</select>
