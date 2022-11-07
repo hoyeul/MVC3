@@ -1,0 +1,9 @@
+예약 테이블
+
+Create table rev (
+rev_num number(4) primary key,
+rev_name varchar2(20) not null,
+rev_location varchar2(20) not null
+rev_date date not null,
+rev_program varchar2(200) not null,
+);
