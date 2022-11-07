@@ -6,18 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <% String path = request.getContextPath(); %>
-<link rel="stylesheet", href="<%=path %>/css/revSelectForm2.css">
+<link rel="stylesheet" href="<%=path %>/css/revSelectForm2.css">
+<script src="<%=path %>/js/revSelectForm2.js"></script>
 </head>
 <body>
 <% 
 	revDto dto = (revDto)request.getAttribute("dto");
 %>
+<form name="frm" action="revDeleteController.do">
 <table>
 	<caption>건강검진 예약 조회</caption>
 	<tr>
 		<td>예약번호</td>
-		<td><input type="text" value=<%=dto.getRev_num() %> readonly></td>
+		<td><input type="text" name="rev_num" value=<%=dto.getRev_num() %> readonly></td>
 	</tr>
 	<tr>
 		<td>이름</td>
@@ -41,9 +44,12 @@
 	</tr>
 	<tr>
 		<td colspan="2">
+			<button type="button" onclick="">예약수정</button>
+			<button type="button" onclick="cancel()">예약취소</button>
 			<button type="button" onclick="window.location.href='index.html'">홈으로</button>
 		</td>
 	</tr>
 </table>
+</form>
 </body>
 </html>

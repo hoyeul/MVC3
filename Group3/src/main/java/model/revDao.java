@@ -72,13 +72,13 @@ public class revDao {
 		return dto;
 	}
 	
-	public void delete(revDto dto) {
+	public void delete(String key) {
 		
 		dbCon();
 		String sql = " delete from rev where rev_num = ? ";
 		try {
 			PreparedStatement pst = con.prepareStatement(sql);
-			pst.setString(1, dto.getRev_num());
+			pst.setString(1, key);
 			pst.executeUpdate();
 			
 			pst.close();
