@@ -33,10 +33,6 @@
 <% String path  = request.getContextPath(); %>
 <link rel="stylesheet" href="<%=path %>/css/revInsertForm.css">
 <script src="<%=path %>/js/revInsertForm.js"></script>
-<script>
-	
-	
-</script>
 </head>
 <body>
 
@@ -79,7 +75,7 @@
 			<option value="14:00">14:00</option>
 			<option value="15:00">15:00</option>
 			<option value="16:00">16:00</option>
-			<!-- 이미 예약된 시간 안보이게 하기 -->
+			<!-- 이미 예약된 시간 안보이게 하기(해결) -->
 		</select>
 	</td>
 </tr>

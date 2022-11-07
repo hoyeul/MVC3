@@ -38,6 +38,14 @@ public class revDto {
 		this.rev_name = rev_name;
 	}
 
+	public String getRev_location() {
+		return rev_location;
+	}
+
+	public void setRev_location(String rev_location) {
+		this.rev_location = rev_location;
+	}
+	
 	public String getRev_date() {
 		return rev_date;
 	}
@@ -62,13 +70,14 @@ public class revDto {
 		this.rev_program = rev_program;
 	}
 
-	public String getRev_location() {
-		return rev_location;
+	@Override
+	public String toString() {
+		return "revDto [rev_num=" + rev_num + ", rev_name=" + rev_name + ", rev_location=" + rev_location + ", rev_date="
+				+ rev_date + ", rev_time=" + rev_time + ", rev_program=" + rev_program + "]";
 	}
 
-	public void setRev_location(String rev_location) {
-		this.rev_location = rev_location;
-	}
+
+
 
 	
 }

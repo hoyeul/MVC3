@@ -20,17 +20,4 @@ public class revSelectController extends HttpServlet{
 		request.getRequestDispatcher("WEB-INF/views/revSelectForm.jsp").forward(request, response);
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/plain;utf-8");
-		
-		String rev_num = request.getParameter("rev_num");
-		
-		revDao dao = new revDao();
-		revService s = new revService(dao);
-		s.select(rev_num);
-		
-		response.sendRedirect("print.html");
-	}
 }
