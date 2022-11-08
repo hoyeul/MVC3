@@ -48,6 +48,7 @@
 		</td>
 	</tr>
 </table>
+<input type="hidden" name="rev_id", value=<%=dto.getRev_id() %>>
 </form>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package controller;
+package login;
 
 import java.io.IOException;
 
@@ -9,19 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/revSelectController.do")
-public class revSelectController extends HttpServlet{
+
+@WebServlet("/logOut2")
+public class LogOut extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	 
 		HttpSession session = request.getSession();
-		String id  =(String) session.getAttribute("id");
-		if( id  != null){
-			request.getRequestDispatcher("WEB-INF/views/revSelectForm.jsp").forward(request, response);
-		}
-		else {
-			response.sendRedirect("login2.do2");
-		}
+		session.invalidate();		
+		//메인화면으로
+	    response.sendRedirect("/Group3/main2.do");
+		
 	}
+
 }

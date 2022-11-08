@@ -32,7 +32,7 @@ public class revDao {
 	public void insert(revDto dto) {
 		
 		dbCon();
-		String sql = " insert into rev values(?,?,?,?,?,?) ";
+		String sql = " insert into rev values(?,?,?,?,?,?,?) ";
 		try {
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1, dto.getRev_num());
@@ -41,6 +41,7 @@ public class revDao {
 			pst.setString(4, dto.getRev_date());
 			pst.setString(5, dto.getRev_time());
 			pst.setString(6, dto.getRev_program());
+			pst.setString(7, dto.getRev_id());
 			pst.executeUpdate();
 			
 			pst.close();
@@ -63,7 +64,7 @@ public class revDao {
 			ResultSet rs = pst.executeQuery();
 			
 			if(rs.next()) {
-				dto = new revDto(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
+				dto = new revDto(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -75,16 +76,16 @@ public class revDao {
 	public void update(revDto dto) {
 		
 		dbCon();
-		String sql = " update rev set rev_name = ?, rev_location = ?, rev_date = ?, rev_time = ?, rev_program = ? where rev_num = ? ";
+		String sql = " update rev set rev_location = ?, rev_date = ?, rev_time = ?, rev_program = ? where rev_num = ? ";
 		
 		try {
 			PreparedStatement pst = con.prepareStatement(sql);
-			pst.setString(1, dto.getRev_name());
-			pst.setString(2, dto.getRev_location());
-			pst.setString(3, dto.getRev_date());
-			pst.setString(4, dto.getRev_time());
-			pst.setString(5, dto.getRev_program());
-			pst.setString(6, dto.getRev_num());
+			pst.setString(1, dto.getRev_location());
+			pst.setString(2, dto.getRev_date());
+			pst.setString(3, dto.getRev_time());
+			pst.setString(4, dto.getRev_program());
+			pst.setString(5, dto.getRev_num());
+			
 			pst.executeUpdate();
 			
 			

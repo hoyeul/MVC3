@@ -8,11 +8,12 @@ public class revDto {
 	String rev_time;
 	String rev_program;
 	String rev_location;
+	String rev_id;
 	
 	public revDto() {}
 
 	public revDto(String rev_num, String rev_name, String rev_location, String rev_date, String rev_time, 
-			String rev_program) {
+			String rev_program, String rev_id) {
 		super();
 		this.rev_num = rev_num;
 		this.rev_name = rev_name;
@@ -20,6 +21,7 @@ public class revDto {
 		this.rev_date = rev_date;
 		this.rev_time = rev_time;
 		this.rev_program = rev_program;
+		this.rev_id = rev_id;
 	}
 
 	public String getRev_num() {
@@ -68,6 +70,14 @@ public class revDto {
 
 	public void setRev_program(String rev_program) {
 		this.rev_program = rev_program;
+	}
+
+	public String getRev_id() {
+		return rev_id;
+	}
+
+	public void setRev_id(String rev_id) {
+		this.rev_id = rev_id;
 	}
 
 	@Override

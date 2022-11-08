@@ -24,10 +24,10 @@ public class revSelectController2 extends HttpServlet{
 		
 		revDao dao = new revDao();
 		revService s = new revService(dao);
-		revDto dto = s.select(rev_num);
-		
+		revDto dto = s.select(rev_num);		
 		request.setAttribute("dto", dto);
 		request.getRequestDispatcher("WEB-INF/views/revSelectForm2.jsp").forward(request, response);
+		
 	}
 	
 }

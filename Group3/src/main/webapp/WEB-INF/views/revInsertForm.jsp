@@ -36,6 +36,7 @@
 </head>
 <body>
 
+<% String rev_id = (String) session.getAttribute("id"); %>
 <form action="revInsertController.do" method="post" name="frm">
 <table class="revFrom_table">
 <caption>건강검진 예약</caption>
@@ -98,6 +99,7 @@
 	</td>
 </tr>
 </table>
+<input type="hidden" name="rev_id" value=<%=rev_id %>>
 </form>
 
 </body>
