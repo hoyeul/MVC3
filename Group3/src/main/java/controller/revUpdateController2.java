@@ -9,23 +9,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.revDao;
+import model.revDto;
 import model.revService;
 
-@WebServlet("/revDeleteController.do")
-public class revDeleteController extends HttpServlet{
+@WebServlet("/revUpdateController2.do")
+public class revUpdateController2 extends HttpServlet{
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/plain;utf-8");
 		
 		String rev_num = request.getParameter("rev_num");
+		
 		revDao dao = new revDao();
 		revService s = new revService(dao);
-		s.delete(rev_num);
+		revDto dto = s.select(rev_num);
 		
-		response.sendRedirect("index.html");
-
+		request.setAttribute("dto", dto);
+		request.getRequestDispatcher("WEB-INF/views/revUpdateForm2.jsp").forward(request, response);
 	}
-
+	
 }

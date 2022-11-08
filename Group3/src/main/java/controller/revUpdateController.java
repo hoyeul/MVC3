@@ -8,15 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.revDao;
-import model.revDto;
-import model.revService;
-
-@WebServlet("/revSelectController.do")
-public class revSelectController extends HttpServlet{
+@WebServlet("/revUpdateController.do")
+public class revUpdateController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/revSelectForm.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/revUpdateForm.jsp").forward(request, response);
 	}
 }

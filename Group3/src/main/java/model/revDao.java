@@ -72,6 +72,32 @@ public class revDao {
 		return dto;
 	}
 	
+	public void update(revDto dto) {
+		
+		dbCon();
+		String sql = " update rev set rev_name = ?, rev_location = ?, rev_date = ?, rev_time = ?, rev_program = ? where rev_num = ? ";
+		
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, dto.getRev_name());
+			pst.setString(2, dto.getRev_location());
+			pst.setString(3, dto.getRev_date());
+			pst.setString(4, dto.getRev_time());
+			pst.setString(5, dto.getRev_program());
+			pst.setString(6, dto.getRev_num());
+			pst.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+	
+	
 	public void delete(String key) {
 		
 		dbCon();
