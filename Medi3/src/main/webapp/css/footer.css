@@ -1,0 +1,65 @@
+footer,
+.footer_bottom,
+.footer_bottom__content,
+.footer_bottom__content p,
+.footer_log
+{
+    padding: 10px;
+    /*border: 1px solid black;*/
+}
+footer{
+    background-color: #8b8d91;
+}
+
+.footer_bottom{
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+    
+    width: 1000px;
+    margin: 0px auto;
+
+}
+.footer_log {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-image: url(/Medi3/image/logo.png);
+    background-position: center;
+    background-size: 130%;
+}
+.content__one{
+    width: 100%;
+    position: relative;
+}
+.footer_bottom__content div,
+.footer_bottom__content ul {
+    display: flex;
+}
+.content__one ul{
+    text-align: right;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+.face{
+    background-image: url(https://www.kahp.or.kr/resources/common/images/common/sns-facebook-hover.png);
+}
+.yotube{
+    background-image: url(https://www.kahp.or.kr/resources/common/images/common/sns-youtube-hover.png);
+}
+.instar{
+    background-image: url(https://www.kahp.or.kr/resources/common/images/common/sns-insta-hover.png);
+}
+.naver{
+    background-image: url(https://www.kahp.or.kr/resources/common/images/common/sns-blog-hover.png);
+}
+.footer_bottom .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    margin-left: 10px;
+    
+}

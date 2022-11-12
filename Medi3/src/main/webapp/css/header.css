@@ -1,0 +1,132 @@
+/*============================================================================*/
+.main-headerNav,
+.headerNav,
+.headerNav__item,
+.headerNav__logo,
+.headerNav__menu,
+.menu__item,
+.item__list,
+.main-headerNav li {
+    padding: 10px;
+    /*border: 1px solid black;*/
+    z-index: 100;
+}
+/*============================================================================*/
+
+.main-headerNav {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 3px rgba(22, 22, 22, 0.422); 
+
+}
+.headerNav {
+
+    margin: 0px auto;
+    width: 1000px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: content-box;
+
+
+}
+.headerNav__logo {
+    width: 200px;
+    height: 100px;
+    background-image: url(/Medi3/image/logo.png);
+    background-position: center;
+    background-size: cover;
+    margin: 0px 20px;
+}
+.headerNav__menu,
+.menu__item {
+    margin: 0px 10px;
+}
+.headerNav__menu:last-child{
+    width: 650px;
+}
+
+.headerNav__menu ul {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+.menu__item{
+    height: 50px;
+    width: 130px;   /*여기 값주니깐 괜찮아짐*/
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.menu__item .item__list {
+    color: black;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    display: none; 
+    position: relative;
+    /*border: 1px solid black;*/
+    
+    
+
+}
+.menu__item:hover .item__list {
+    display: block;
+}
+.item__list {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 108px;
+    position: absolute;
+    right: 11px;
+    top:14px;
+    font-weight: 800;
+    border-bottom: 3px solid #ef3e61;
+    
+}
+.item__list a{
+    color: rgb(102, 102, 102);
+    
+}
+.arow__size{
+    font-size: 10px;
+}
+
+.menu__item h3 {
+    position: relative;
+}
+.menu__item h3 a:hover,
+.item__list li a:hover {
+    color: #ef3e61;
+    transition: color 1ms ease-in-out;
+}
+
+.menu__item a div {
+    position: absolute;
+    left: 10px;
+    width: 85px;
+    height: 3px;
+    display:inline-block;
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.menu__item a:hover .stic_small{
+    position: absolute;
+    left: 21px;
+    width: 85px;
+    height: 1.5px;
+    display:inline-block;
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+
+}
+
+.menu__item a:hover div,
+.menu__item a:hover .stic_small { 
+    display:block;
+    transform: scaleX(1);
+    background-color: #ef3e61;
+
+
+}

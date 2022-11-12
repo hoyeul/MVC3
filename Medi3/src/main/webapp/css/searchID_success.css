@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.IDsuccess {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.IDsuccess-wrap {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.IDsuccess-wrap button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #ef3e61;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.IDsuccess-wrap button:hover,.IDsuccess-wrap button:active,.IDsuccess-wrap button:focus {
+  background: #fc6583;
+} 
+.IDsuccess-wrap .message {
+  margin: 25px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.aTags{
+	margin-top: 15px;
+}
+
+.idfind{
+	font-size: 13px;
+}
+
+.findID{
+	font-weight: bold;
+	font-size: 20px;
+}

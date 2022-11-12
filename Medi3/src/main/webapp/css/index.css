@@ -1,0 +1,51 @@
+@import "header.css";
+@import "footer.css";
+
+
+*{
+
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+   list-style: none; 
+    /*display: flex;*/
+}
+
+main {
+    padding: 50px 0px 120px 0px;
+
+}
+
+.swiper-slide img{
+	height: 630px;
+}
+
+.swiper-pagination{
+	margin-bottom: 20px;
+}
+
+.swiper-pagination-bullet {
+	width: 20px; 
+	height: 20px; 
+	background: transparent; 
+	border: 1px solid pink; 
+	opacity: 1; 
+}
+
+.swiper-pagination-bullet-active { 
+	--swiper-theme-color: #ef3e61;
+}
+
+.swiper-button-next{
+	--swiper-theme-color: #ef3e61;
+}
+
+.swiper-button-prev{
+	--swiper-theme-color: #ef3e61;
+}
