@@ -45,7 +45,7 @@ public class revService {
 		return dao.selectName(key);
 	}
 	
-	public ArrayList<Integer> selectNums(String key){
+	public ArrayList<String> selectNums(String key){
 		return dao.selectNums(key);
 	}
 	

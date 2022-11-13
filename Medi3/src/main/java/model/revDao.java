@@ -195,10 +195,10 @@ public class revDao {
 		return userName;
 	}
 	
-	public ArrayList<Integer> selectNums(String key) {
+	public ArrayList<String> selectNums(String key) {
 		dbCon();
 		String sql = " select rev_num from rev where rev_id = ? ";
-		ArrayList<Integer> list = new ArrayList<>();
+		ArrayList<String> list = new ArrayList<>();
 		
 		try {
 			PreparedStatement pst = con.prepareStatement(sql);
@@ -206,7 +206,7 @@ public class revDao {
 			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next()) {
-				list.add(Integer.parseInt(rs.getString(1)));
+				list.add(rs.getString(1));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
